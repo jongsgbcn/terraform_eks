@@ -12,7 +12,7 @@ module "vpc" {
 module "eks" {
   source         = "./eks"
   vpc_id         = module.vpc.vpc_id
-  key_pair       = "MyKey"
+  key_pair       = var.key_pair
   instance_types = ["t3.small"]
   desired_size   = 2
   min_size       = 1
